@@ -1,2 +1,3 @@
+plugins: []
 exclude:
   - sitemap.xml
