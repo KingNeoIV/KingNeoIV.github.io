@@ -109,6 +109,22 @@
     position: relative;
 }
 
+/* Hover animation for project cards */
+.project-card,
+.project-card-usellit,
+.project-card-spacecowboy
+{
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover,
+.project-card-usellit:hover,
+.project-card-spacecowboy:hover
+{
+    transform: translateY(-8px);
+    box-shadow: 0 12px rgba(0, 0, 0, 0.45);
+}
+
 /* Dark overlay for readability */
 .project-card::before,
 .project-card-usellit::before,
