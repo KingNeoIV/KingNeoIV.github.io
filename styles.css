@@ -141,3 +141,49 @@
 {
     background-image: url("images/spacecowboy.png");
 }
+
+/* ================================
+   Mobile Responsive Layout
+   ================================ */
+@media (max-width: 768px) {
+
+    /* Sidebar becomes a top bar */
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 10px 0;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Sidebar links become horizontal */
+    .sidebar .nav-link {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .sidebar ul {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    /* Hide the sidebar footer on mobile (optional) */
+    .sidebar-footer {
+        display: none;
+    }
+
+    /* Main content no longer pushed right */
+    .main-container {
+        margin-left: 0;
+        padding-top: 20px;
+        background-attachment: scroll; /* Fixes mobile background jitter */
+    }
+
+    /* Hero text spacing fix */
+    .hero-text {
+        margin-top: 20px;
+    }
+}
