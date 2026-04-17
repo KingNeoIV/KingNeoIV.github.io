@@ -1,5 +1,5 @@
 /* ================================
-   Desktop scaling
+   Desktop scaling (optional)
    ================================ */
 @media (min-width: 1024px) {
     html {
@@ -7,59 +7,24 @@
     }
 }
 
-/* ================================
-   Sidebar layout
-   ================================ */
-.sidebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 170px;
-    height: 100vh;
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.sidebar-footer {
-    padding: 15px;
-    font-size: 0.5rem;
-    text-align: center;
-    opacity: 0.7;
-}
-
-.sidebar .nav-link {
-    padding: 12px 20px;
-    font-size: 1.1rem;
-}
-
-.sidebar .nav-link:hover {
-    background-color: #495057;
-}
-
-/* ================================
-   Main container + background
-   ================================ */
-.main-container {
-    margin-left: 170px;
-    padding: 20px;
-    min-height: 100vh;
-
+body {
     background-image: url('assets/ui/locked-upbg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
 }
+
 
 /* ================================
    Game Window
    ================================ */
 #game-window {
-    width: 100%;
-    height: 110vh;
-    margin: 20px auto;
-    border-radius: 20px;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 
     background: rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(4px);
@@ -69,16 +34,14 @@
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
 
     display: flex;
-    /* RESTORED */
     justify-content: center;
-    /* CENTER X */
     align-items: center;
-    /* CENTER Y */
-    padding: 20px;
     position: relative;
-    /* Needed for absolute children */
 }
 
+/* ================================
+   Table Wrapper + Scaling
+   ================================ */
 #table-wrapper {
     width: 100%;
     height: 100%;
@@ -86,63 +49,29 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-}
-
-#table-wrapper {
     transform-origin: center center;
 }
 
-@media (max-width: 1400px) {
-    #table-wrapper {
-        transform: scale(0.9);
-    }
-}
-
-@media (max-width: 1200px) {
-    #table-wrapper {
-        transform: scale(0.8);
-    }
-}
-
-@media (max-width: 1000px) {
-    #table-wrapper {
-        transform: scale(0.7);
-    }
-}
-
-@media (max-width: 800px) {
-    #table-wrapper {
-        transform: scale(0.6);
-    }
-}
-
-
+@media (max-width: 1400px) { #table-wrapper { transform: scale(0.9); } }
+@media (max-width: 1200px) { #table-wrapper { transform: scale(0.8); } }
+@media (max-width: 1000px) { #table-wrapper { transform: scale(0.7); } }
+@media (max-width: 800px)  { #table-wrapper { transform: scale(0.6); } }
 
 /* ================================
    Oval Table
    ================================ */
-#table-area {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .table-surface {
     width: 1000px;
     height: 700px;
-    background: #0b6623;
-    /* green felt */
+    background: #0b6623; /* green felt */
     border-radius: 50%;
-    border: 25px solid #5a3e1b;
-    /* wood trim */
+    border: 25px solid #5a3e1b; /* wood trim */
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
     position: relative;
 }
 
 /* ================================
-    Shuffle Button
+   Shuffle Button
    ================================ */
 #shuffle-btn {
     position: absolute;
@@ -150,8 +79,23 @@
     left: 125%;
     transform: translateX(-50%);
     z-index: 10;
+
+    padding: 10px 20px;
+    background: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
 }
 
+#shuffle-btn:hover {
+    background: #0b5ed7;
+}
+
+/* ================================
+   Deck
+   ================================ */
 #visual-deck {
     top: 80%;
     left: 45%;
@@ -166,25 +110,19 @@
     transition: transform 0.15s ease;
 }
 
-/* Shuffle animation wiggle */
-.shuffle-tilt {
-    transform: rotate(6deg) translateX(8px);
-}
+.shuffle-tilt  { transform: rotate(6deg) translateX(8px); }
+.shuffle-tilt2 { transform: rotate(-6deg) translateX(-8px); }
 
-.shuffle-tilt2 {
-    transform: rotate(-6deg) translateX(-8px);
-}
-
-/* ===================================================
-   Placeholders for players cards and opponents cards
-   =================================================== */
+/* ================================
+   Card Slot Placeholders
+   ================================ */
 .card-slot-placeholder {
     position: absolute;
     width: 70px;
     height: 95px;
     border: 2px dashed rgba(255, 255, 255, 0.5);
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.1)
+    background: rgba(255, 255, 255, 0.1);
 }
 
 #partner-card-slot {
@@ -212,8 +150,8 @@
 }
 
 /* ================================
-    Placeholder for player portraits
-    ================================= */
+   Portrait Placeholders
+   ================================ */
 .portrait-placeholder {
     position: absolute;
     width: 110px;
@@ -224,25 +162,25 @@
 }
 
 #partner-portrait {
-        top: -100px;
-        left: 50%;
-        transform: translate(-50%, -50%);
-   }
+    top: -100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 #player-portrait {
-        bottom: -210px;
-        left: 50%;
-        transform: translate(-50%, -50%);
-   }
+    bottom: -210px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
 #opponent1-portrait {
-        top: 50%;
-        left: -100px;
-        transform: translate(-50%, -50%);
-   }
+    top: 50%;
+    left: -100px;
+    transform: translate(-50%, -50%);
+}
 
 #opponent2-portrait {
-        top: 50%;
-        right: -210px;
-        transform: translate(-50%, -50%);
-   }
+    top: 50%;
+    right: -210px;
+    transform: translate(-50%, -50%);
+}
