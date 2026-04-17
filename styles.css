@@ -10,8 +10,7 @@
 /* ================================
    Sidebar Layout and Styling
    ================================ */
-.sidebar
-{
+.sidebar {
     position: fixed;
     top: 0;
     left: 0;
@@ -23,8 +22,7 @@
     justify-content: space-between;
 }
 
-.sidebar-footer
-{
+.sidebar-footer {
     padding: 15px;
     font-size: 0.5rem;
     text-align: center;
@@ -32,23 +30,19 @@
 }
 
 /* Sidebar link styling */
-.sidebar .nav-link
-{
+.sidebar .nav-link {
     padding: 12px 20px;
     font-size: 1.1rem;
 }
 
-.sidebar .nav-link:hover
-{
+.sidebar .nav-link:hover {
     background-color: #495057;
 }
-
 
 /* ================================
    Main Content + Hero Text Styling
    ================================ */
-.hero-text
-{
+.hero-text {
     background: rgba(0, 0, 0, 0.55);
     padding: 25px;
     border-radius: 10px;
@@ -58,8 +52,7 @@
     margin-bottom: 30px;
 }
 
-.main-container
-{
+.main-container {
     margin-left: 170px; /* Leaves room for the fixed sidebar */
     padding: 20px;
     min-height: 100vh;
@@ -70,16 +63,14 @@
     background-attachment: fixed;
 }
 
-.mt-20
-{
+.mt-20 {
     margin-top:20px;
 }
 
 /* ================================
    Profile Picture Styling
    ================================ */
-.profile-pic
-{
+.profile-pic {
     width: 180px;
     height: 180px;
     object-fit: cover;
@@ -92,14 +83,12 @@
     margin-right: auto;
 }
 
-
 /* ================================
    Project Card Styling (Shared)
    ================================ */
 .project-card,
 .project-card-usellit,
-.project-card-spacecowboy
-{
+.project-card-spacecowboy {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -107,20 +96,12 @@
     border-radius: 10px;
     overflow: hidden;
     position: relative;
-}
-
-/* Hover animation for project cards */
-.project-card,
-.project-card-usellit,
-.project-card-spacecowboy
-{
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover,
 .project-card-usellit:hover,
-.project-card-spacecowboy:hover
-{
+.project-card-spacecowboy:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px rgba(0, 0, 0, 0.45);
 }
@@ -128,8 +109,7 @@
 /* Dark overlay for readability */
 .project-card::before,
 .project-card-usellit::before,
-.project-card-spacecowboy::before
-{
+.project-card-spacecowboy::before {
     content: "";
     position: absolute;
     top: 0;
@@ -142,28 +122,23 @@
 /* Ensures text appears above the overlay */
 .project-card .card-body,
 .project-card-usellit .card-body,
-.project-card-spacecowboy .card-body
-{
+.project-card-spacecowboy .card-body {
     position: relative;
     z-index: 2;
 }
 
-
 /* ================================
    Individual Project Card Images
    ================================ */
-.project-card
-{
+.project-card {
     background-image: url("images/AM-Victoria-campus.jpg");
 }
 
-.project-card-usellit
-{
+.project-card-usellit {
     background-image: url("images/u-sell-itPic.png");
 }
 
-.project-card-spacecowboy
-{
+.project-card-spacecowboy {
     background-image: url("images/spacecowboy.png");
 }
 
@@ -172,33 +147,38 @@
    ================================ */
 @media (max-width: 768px) {
 
-    /* Sidebar becomes a top bar */
+    /* Sidebar becomes a top toolbar */
     .sidebar {
-        position: relative;
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
         height: auto;
         padding: 10px 0;
         flex-direction: row;
         align-items: center;
         justify-content: center;
+        z-index: 9999;
+        background-color: rgba(0,0,0,0.85);
+        backdrop-filter: blur(4px);
     }
 
-    /* Sidebar links become horizontal */
-    .sidebar .nav-link {
-        padding: 10px;
-        font-size: 1rem;
-    }
-
-    /* Force nav links to sit side-by-side on mobile */
+    /* Nav links become horizontal */
     .sidebar .nav {
         display: flex;
-        flex-direction: row;
+        flex-direction: row !important;
         justify-content: space-around;
         width: 100%;
     }
 
+    .sidebar .nav-link {
+        padding: 10px;
+        font-size: 1rem;
+        text-align: center;
+        width: 100%;
+    }
 
-    /* Hide the sidebar footer on mobile (optional) */
+    /* Hide the sidebar footer on mobile */
     .sidebar-footer {
         display: none;
     }
@@ -206,7 +186,7 @@
     /* Main content no longer pushed right */
     .main-container {
         margin-left: 0;
-        padding-top: 20px;
+        padding-top: 70px; /* space for the toolbar */
         background-attachment: scroll; /* Fixes mobile background jitter */
     }
 
