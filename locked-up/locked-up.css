@@ -186,11 +186,11 @@ body {
 /* ================================
    📱 MOBILE MODE
    ================================ */
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
 
     /* Scale table even smaller */
     #table-wrapper {
-        transform: scale(calc(100vw / 1200));
+        transform: scale(calc(min(100vw / 1200, 100vh / 700)));
     }
 
     /* Smaller card slots */
