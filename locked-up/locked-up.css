@@ -39,8 +39,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    transform-origin: center center;
+    position: relative;      
+    transform-origin: top left;
 }
+
 
 /* ================================
    Mobile Landscape Scaling
