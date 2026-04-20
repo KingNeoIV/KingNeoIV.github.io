@@ -56,7 +56,7 @@ body {
     .table-surface {
         width: 700px;
         height: 490px;
-        border-width: 18px; /* optional: shrink border */
+        border-width: 18px;
     }
 
     .card {
@@ -68,10 +68,44 @@ body {
         width: 90px;
         height: 90px;
     }
+
+    /* FIX ABSOLUTE POSITIONS FOR MOBILE */
+    #partner-portrait {
+        top: -110px;
+    }
+
+    #player-portrait {
+        bottom: -120px;
+    }
+
+    #opponent1-portrait {
+        left: -120px;
+    }
+
+    #opponent2-portrait {
+        right: -120px;
+    }
+
+    #player-hand {
+        top: 360px;
+    }
+
+    #partner-hand {
+        top: 20px;
+    }
+
+    #opponent1-hand {
+        left: -80px;
+    }
+
+    #opponent2-hand {
+        right: -80px;
+    }
+
+    #shuffle-btn {
+        bottom: -100px;
+    }
 }
-
-
-
 
 @media (orientation: portrait) {
     #game-window::before {
