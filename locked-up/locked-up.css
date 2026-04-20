@@ -54,8 +54,8 @@ body {
     }
 
     .table-surface {
-        width: 700px;
-        height: 490px;
+        width: 100px;
+        height: 75px;
         border-width: 18px;
     }
 
@@ -69,7 +69,6 @@ body {
         height: 90px;
     }
 
-    /* FIX ABSOLUTE POSITIONS FOR MOBILE */
     #partner-portrait {
         top: -110px;
     }
