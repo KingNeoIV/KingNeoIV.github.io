@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ProjectGrid from './components/ProjectGrid'
+import Skills from './components/Skills'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         <div className="pt-16">
           <Hero />
           <ProjectGrid />
+          <Skills />
         </div>
       </main>
     </div>
