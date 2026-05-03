@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { projects } from '../data/projects';
-import ProjectModal from './ProjectModal'; // We'll create this file next
+import ProjectModal from './ProjectModal'; 
 
 export default function ProjectGrid() {
   // State to track the active project
