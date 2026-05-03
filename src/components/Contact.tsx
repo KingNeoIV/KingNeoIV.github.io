@@ -20,10 +20,25 @@ export default function Contact() {
           </a>
           
           <div className="flex justify-center gap-6">
-             {/* We can add simple text links or icons later */}
-             <a href="https://github.com/KingNeoIV" className="text-gray-400 hover:text-white transition-colors">GitHub</a>
+             {/* Updated GitHub link to open in new tab */}
+             <a 
+               href="https://github.com/KingNeoIV" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               className="text-gray-400 hover:text-white transition-colors"
+             >
+               GitHub
+             </a>
              <span className="text-zinc-700">|</span>
-             <a href="#" className="text-gray-400 hover:text-white transition-colors">LinkedIn</a>
+             {/* Note: Update the LinkedIn '#' with your actual link when ready! */}
+             <a 
+               href="https://www.linkedin.com/in/michael-rios-/" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               className="text-gray-400 hover:text-white transition-colors"
+             >
+               LinkedIn
+             </a>
           </div>
         </div>
       </div>
