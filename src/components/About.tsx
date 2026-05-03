@@ -8,8 +8,47 @@ export default function About() {
           <div className="h-1 w-20 bg-emerald-500"></div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Text Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left Side: Photo & Quick Facts */}
+          <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-8 items-center lg:items-start">
+            {/* Profile Picture with Glow Effect */}
+            <div className="relative group shrink-0">
+              <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-500"></div>
+              <img 
+                src="/ProfilePic.png" 
+                alt="Michael Rios" 
+                className="relative w-64 h-64 object-cover rounded-2xl border border-white/10 shadow-2xl"
+              />
+            </div>
+
+            {/* Quick Facts Card */}
+            <div className="relative w-full">
+              <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl blur opacity-10"></div>
+              <div className="relative bg-zinc-900/50 border border-white/10 p-6 rounded-2xl backdrop-blur-xl h-full">
+                <h3 className="text-white font-bold mb-4 text-lg">Quick Facts</h3>
+                <ul className="space-y-3 text-sm">
+                  <li className="flex items-center gap-3 text-gray-300">
+                    <span className="h-1.5 w-1.5 bg-emerald-500 rounded-full"></span>
+                    <span>Victoria, Texas</span>
+                  </li>
+                  <li className="flex items-center gap-3 text-gray-300">
+                    <span className="h-1.5 w-1.5 bg-emerald-500 rounded-full"></span>
+                    <span>Full-Stack & Game Dev Enthusiast</span>
+                  </li>
+                  <li className="flex items-center gap-3 text-gray-300">
+                    <span className="h-1.5 w-1.5 bg-emerald-500 rounded-full"></span>
+                    <span>Texas A&M University–Victoria</span>
+                  </li>
+                  <li className="flex items-center gap-3 text-gray-300">
+                    <span className="h-1.5 w-1.5 bg-emerald-500 rounded-full"></span>
+                    <span>Project: u-sell-it</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Side: Narrative Text */}
           <div className="space-y-6 text-gray-400 text-lg leading-relaxed">
             <p>
               Hello! I'm <span className="text-white font-semibold">Michael Rios</span>, a software engineer 
@@ -20,40 +59,14 @@ export default function About() {
             <p>
               Currently, I'm focusing on mastering the <span className="text-emerald-400">React & TypeScript</span> ecosystem. 
               Whether I'm debugging complex logic in a marketplace application like 
-              <span className="text-white"> u-sell-it</span> or exploring the boundaries of 
-              <span className="text-white"> Virtual Reality</span> with the Quest 3S, I love the 
+              <span className="text-white"> u-sell-it</span> or exploring the logic behind 
+              <span className="text-white"> Game Development</span>, I love the 
               process of turning a blank text editor into a functional product.
             </p>
             <p>
-              When I'm not at my desk, you'll likely find me diving into C++ projects, 
-              sharpening my math skills, or exploring immersive VR worlds.
+              When I'm not at my desk, you'll likely find me diving into <span className="text-white">C++ projects</span>, 
+              sharpening my <span className="text-white">math skills</span>, or experimenting with new game mechanics.
             </p>
-          </div>
-
-          {/* Visual "Stats" Card */}
-          <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-emerald-500 to-cyan-500 rounded-2xl blur opacity-20"></div>
-            <div className="relative bg-zinc-900/50 border border-white/10 p-8 rounded-2xl backdrop-blur-xl">
-              <h3 className="text-white font-bold mb-6 text-xl">Quick Facts</h3>
-              <ul className="space-y-4">
-                <li className="flex items-center gap-3">
-                  <span className="h-2 w-2 bg-emerald-500 rounded-full"></span>
-                  <span>Based in Victoria, Texas</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="h-2 w-2 bg-emerald-500 rounded-full"></span>
-                  <span>Full-Stack & VR Enthusiast</span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="h-2 w-2 bg-emerald-500 rounded-full"></span>
-                  <span>Currently building: <span className="text-emerald-400">u-sell-it</span></span>
-                </li>
-                <li className="flex items-center gap-3">
-                  <span className="h-2 w-2 bg-emerald-500 rounded-full"></span>
-                  <span>Goal: Scalable Software Architecture</span>
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
       </div>
