@@ -6,29 +6,22 @@ interface ProjectModalProps {
 }
 
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
-  // Logic: Show video by default if it exists, otherwise show screenshots
-  const [activeMedia, setActiveMedia] = useState(project.video ? 'video' : 'screenshots');
+  // Logic: Show YouTube video by default if a youtubeId exists, otherwise show screenshots
+  const [activeMedia, setActiveMedia] = useState(project.youtubeId ? 'video' : 'screenshots');
   const [imgIndex, setImgIndex] = useState(0);
 
   return (
-    // "fixed inset-0" covers the whole screen. 
-    // "flex items-center justify-center" centers the modal box.
     <div className="fixed inset-0 z-[100] flex items-center justify-center p-6 sm:p-12">
       
-      {/* BACKDROP: "bg-black/90" is the 90% opacity dark background */}
+      {/* BACKDROP */}
       <div 
         className="absolute inset-0 bg-black/90 backdrop-blur-md animate-in fade-in duration-300" 
         onClick={onClose} 
       />
       
-      {/* MODAL CARD: 
-          "max-w-5xl" sets the large width.
-          "max-h-[90vh]" prevents it from going off the top/bottom of the screen.
-          "bg-zinc-900" and "border-white/10" give it that dark-themed style.
-          "rounded-2xl" gives the large rounded corners. */}
+      {/* MODAL CARD */}
       <div className="relative bg-zinc-900 border border-white/10 w-full max-w-5xl max-h-[140vh] overflow-y-auto rounded-2xl shadow-2xl animate-in zoom-in duration-300">
         
-        {/* INNER PADDING: "p-6 sm:p-10" creates the space between the edge and content */}
         <div className="p-6 sm:p-10">
           
           <button 
@@ -38,14 +31,16 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             ✕
           </button>
 
-          {/* 1. MEDIA SECTION: Handles Videos & Screenshots */}
-          {(project.video || (project.screenshots && project.screenshots.length > 0)) && (
+          {/* 1. MEDIA SECTION: Handles YouTube Embeds & Screenshots */}
+          {(project.youtubeId || (project.screenshots && project.screenshots.length > 0)) && (
             <div className="mb-10 rounded-xl overflow-hidden bg-black aspect-video relative border border-white/5 shadow-2xl group">
-              {activeMedia === 'video' && project.video ? (
-                <video 
-                  src={project.video} 
-                  controls 
-                  className="w-full h-full object-contain"
+              {activeMedia === 'video' && project.youtubeId ? (
+                <iframe
+                  src={`https://www.youtube.com/embed/${project.youtubeId}?rel=0&modestbranding=1`}
+                  title="YouTube video player"
+                  className="w-full h-full border-0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
                 />
               ) : (
                 <img 
@@ -73,8 +68,8 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 </div>
               )}
 
-              {/* MEDIA TOGGLE: This uses 'setActiveMedia', fixing your TypeScript error */}
-              {project.video && project.screenshots && project.screenshots.length > 0 && (
+              {/* MEDIA TOGGLE */}
+              {project.youtubeId && project.screenshots && project.screenshots.length > 0 && (
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 bg-black/60 p-1.5 rounded-full border border-white/10 z-20">
                   <button 
                     onClick={() => setActiveMedia('video')} 
@@ -170,7 +165,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 rel="noopener noreferrer" 
                 className="px-8 py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-bold rounded-lg transition-all"
               >
-                {project.title.includes("Portfolio") ? "Visit Update Site" : "Visit Site"}
+                {project.title.includes("Portfolio") ? "Visit Updated Site" : "Visit Site"}
               </a>
             )}
           </div>
