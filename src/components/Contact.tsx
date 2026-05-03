@@ -13,7 +13,7 @@ export default function Contact() {
 
         <div className="bg-zinc-900/40 border border-white/10 p-10 rounded-2xl backdrop-blur-md">
           <a 
-            href="mailto:michael.rios.kingnoeiv@gmail.com" 
+            href="mailto:michael.rios.nw@gmail.com" 
             className="inline-block px-8 py-4 bg-emerald-500 hover:bg-emerald-400 text-black font-bold rounded-lg transition-all transform hover:scale-105 mb-8"
           >
             Send Me an Email
