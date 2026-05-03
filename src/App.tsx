@@ -1,16 +1,15 @@
-import Navbar from './components/Navbar' // Make sure you created the file in step 1!
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
 
 function App() {
   return (
-    <div className="bg-black min-h-screen text-white">
-      {/* 1. The Navbar stays at the top */}
+    <div className="bg-black min-h-screen text-white selection:bg-emerald-500/30">
       <Navbar />
-      
-      {/* 2. Main content area with padding-top (pt-16) so the navbar doesn't cover the text */}
-      <main className="flex items-center justify-center min-h-screen pt-16">
-        <h1 className="text-6xl font-bold text-emerald-500 tracking-tighter">
-          Michael Rios: Phase 2
-        </h1>
+      <main>
+        {/* We keep pt-16 to leave room for the fixed navbar */}
+        <div className="pt-16">
+          <Hero />
+        </div>
       </main>
     </div>
   )
