@@ -1,4 +1,3 @@
-// src/components/Hero.tsx
 export default function Hero() {
   return (
     <section className="relative w-full py-20 lg:py-32 overflow-hidden">

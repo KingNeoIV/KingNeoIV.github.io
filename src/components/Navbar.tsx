@@ -1,4 +1,3 @@
-// src/components/Navbar.tsx
 export default function Navbar() {
   const navLinks = [
     { name: 'Home', href: '#' },
