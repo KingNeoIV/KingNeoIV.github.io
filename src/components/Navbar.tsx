@@ -14,7 +14,7 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             {/* Pro Tip: Clicking the logo should also take you back to the top */}
             <a href="#" className="text-emerald-500 font-bold text-xl tracking-tighter">
-              MR
+              KingNeoIV
             </a>
           </div>
 
