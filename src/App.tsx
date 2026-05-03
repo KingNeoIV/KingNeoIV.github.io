@@ -4,6 +4,7 @@ import ProjectGrid from './components/ProjectGrid'
 import Skills from './components/Skills'
 import Footer from './components/Footer'
 import NetworkBackground from './components/NetworkBackground'
+import FadeIn from './components/FadeIn'
 
 function App() {
   return (
@@ -16,15 +17,22 @@ function App() {
       <main>
         {/* Hero section stays on top of the background */}
         <div className="pt-16">
-          <Hero />
+          <FadeIn>
+            <Hero />
+          </FadeIn>
           
           {/* 
             We wrap the content sections in a semi-transparent 'glass' container. 
             This makes the text readable while letting the animation peek through.
           */}
           <div className="relative bg-zinc-950/60 backdrop-blur-sm border-t border-white/5">
-            <ProjectGrid />
-            <Skills />
+            <FadeIn delay={0.2}>
+              <ProjectGrid />
+            </FadeIn>
+
+            <FadeIn delay={0.2}>
+              <Skills />
+            </FadeIn>
           </div>
         </div>
       </main>
