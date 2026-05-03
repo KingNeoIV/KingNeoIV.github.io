@@ -16,13 +16,25 @@ export default function Hero() {
             I'm Michael Rios. Currently focused on building full-stack applications with 
             React and TypeScript, like my marketplace project <span className="text-white">u-sell-it</span>.
           </p>
+          
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
-            <button className="px-8 py-3 bg-emerald-500 text-black font-bold rounded-lg hover:bg-emerald-400 transition-all transform hover:-translate-y-1">
+            {/* Primary Action: Scroll to Projects */}
+            <a 
+              href="#projects" 
+              className="px-8 py-3 bg-emerald-500 text-black text-center font-bold rounded-lg hover:bg-emerald-400 transition-all transform hover:-translate-y-1"
+            >
               View Projects
-            </button>
-            <button className="px-8 py-3 border border-white/20 text-white font-bold rounded-lg hover:bg-white/10 transition-all">
-              Contact Me
-            </button>
+            </a>
+
+            {/* Secondary Action: Resume Download */}
+            <a 
+              href="/Michael-Rios_Resume.pdf" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 border border-emerald-500/50 text-emerald-500 text-center font-bold rounded-lg hover:bg-emerald-500/10 transition-all"
+            >
+              Download Resume
+            </a>
           </div>
         </div>
       </div>
