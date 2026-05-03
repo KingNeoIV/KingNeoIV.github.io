@@ -19,12 +19,14 @@ export default function Footer() {
           </a>
           <a 
             href="https://www.linkedin.com/in/michael-rios-/"
+            target="_blank" 
+            rel="noopener noreferrer"
             className="text-gray-400 hover:text-emerald-400 transition-colors text-sm font-medium"
           >
             LinkedIn
           </a>
           <a 
-            href="mailto:michael.rios.kingneoiv@gmail.com"
+            href="mailto:michael.rios.nw@gmail.com"
             className="text-gray-400 hover:text-emerald-400 transition-colors text-sm font-medium"
           >
             Email
