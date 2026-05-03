@@ -9,8 +9,8 @@ export default function NetworkBackground() {
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const particleColor = 'rgba(16, 185, 129, 0.5)';
-    const lineColor = 'rgba(16, 185, 129, 0.15)';
+    const particleColor = 'rgba(16, 185, 129, 0.65)';
+    const lineColor = 'rgba(16, 185, 129, 0.25)';
 
     let animationFrameId: number;
     let particlesArray: Particle[] = [];
@@ -85,14 +85,32 @@ export default function NetworkBackground() {
 
     const init = () => {
       particlesArray = [];
-      const numberOfParticles = (canvas.height * canvas.width) / 10000;
+      const isMobile = window.innerWidth < 768;
+      
+      // Setting 1: Desktop (High density)
+      // Setting 2: Mobile (Low density, but high visibility)
+      let numberOfParticles;
+      
+      if (isMobile) {
+        // Mobile needs fewer particles to avoid clutter
+        numberOfParticles = 40; 
+      } else {
+        // Desktop scales with resolution
+        numberOfParticles = (canvas.height * canvas.width) / 9000;
+        // Ensure desktop doesn't go below a certain point if the window is resized small
+        if (numberOfParticles < 100) numberOfParticles = 100;
+      }
+
       for (let i = 0; i < numberOfParticles; i++) {
-        const size = Math.random() * 2 + 0.5;
-        // Using local canvas reference
+        // Bigger size for better visibility on all screens
+        const size = Math.random() * 3 + 2; 
         const x = Math.random() * (canvas.width - size * 2) + size * 2;
         const y = Math.random() * (canvas.height - size * 2) + size * 2;
-        const directionX = Math.random() * 1 - 0.5;
-        const directionY = Math.random() * 1 - 0.5;
+        
+        // Speed
+        const directionX = Math.random() * 1.2 - 0.6;
+        const directionY = Math.random() * 1.2 - 0.6;
+        
         particlesArray.push(new Particle(x, y, directionX, directionY, size));
       }
     };
@@ -104,9 +122,11 @@ export default function NetworkBackground() {
           const dy = particlesArray[a].y - particlesArray[b].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
 
-          if (distance < 120) {
+          // Increased connection distance to 160 so more lines appear
+          if (distance < 160) {
             ctx.strokeStyle = lineColor;
-            ctx.lineWidth = 1;
+            // Thicker lines for mobile visibility
+            ctx.lineWidth = 1.8; 
             ctx.beginPath();
             ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
             ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
