@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import NetworkBackground from './components/NetworkBackground'
 import FadeIn from './components/FadeIn'
 import Contact from './components/Contact'
+import About from './components/About'
 
 function App() {
   return (
@@ -20,6 +21,10 @@ function App() {
         <div className="pt-16">
           <FadeIn>
             <Hero />
+          </FadeIn>
+          
+          <FadeIn delay={0.2}>
+            <About />
           </FadeIn>
           
           {/* 
