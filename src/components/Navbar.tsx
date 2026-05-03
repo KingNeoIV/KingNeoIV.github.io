@@ -1,9 +1,9 @@
 export default function Navbar() {
   const navLinks = [
-    { name: 'Home', href: '#' },
-    { name: 'About', href: '#' },
-    { name: 'Projects', href: '#' },
-    { name: 'Contact', href: '#' },
+    { name: 'Home', href: '#' }, // '#' alone takes you to the top
+    { name: 'About', href: '#about' },
+    { name: 'Projects', href: '#projects' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   return (
@@ -12,9 +12,10 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo / Name */}
           <div className="flex-shrink-0">
-            <span className="text-emerald-500 font-bold text-xl tracking-tighter">
+            {/* Pro Tip: Clicking the logo should also take you back to the top */}
+            <a href="#" className="text-emerald-500 font-bold text-xl tracking-tighter">
               MR
-            </span>
+            </a>
           </div>
 
           {/* Links */}
@@ -32,7 +33,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Mobile Menu Button (Placeholder for now) */}
+          {/* Mobile Menu Button (Placeholder) */}
           <div className="md:hidden">
             <button className="text-gray-400 hover:text-white">
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

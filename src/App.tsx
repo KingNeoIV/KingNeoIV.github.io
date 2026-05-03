@@ -5,6 +5,7 @@ import Skills from './components/Skills'
 import Footer from './components/Footer'
 import NetworkBackground from './components/NetworkBackground'
 import FadeIn from './components/FadeIn'
+import Contact from './components/Contact'
 
 function App() {
   return (
@@ -32,6 +33,10 @@ function App() {
 
             <FadeIn delay={0.2}>
               <Skills />
+            </FadeIn>
+
+            <FadeIn delay={0.2}>
+              <Contact />
             </FadeIn>
           </div>
         </div>
