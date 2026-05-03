@@ -2,7 +2,7 @@ import { projects } from '../data/projects';
 
 export default function ProjectGrid() {
   return (
-    <section className="py-20 bg-black">
+    <section id="projects" className="py-20 bg-transparent">
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="flex flex-col mb-12">
