@@ -1,10 +1,32 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react'; // Added useEffect
 import { projects } from '../data/projects';
 import ProjectModal from './ProjectModal'; 
 
 export default function ProjectGrid() {
   // State to track the active project
   const [selectedProject, setSelectedProject] = useState<null | typeof projects[0]>(null);
+
+  // BUG FIX: Closes the modal if the user clicks a Navbar link while it's open
+  useEffect(() => {
+    const handleNavigation = () => {
+      setSelectedProject(null);
+    };
+
+    // Listen for hash changes (e.g., #projects -> #contact)
+    window.addEventListener('hashchange', handleNavigation);
+    
+    return () => {
+      window.removeEventListener('hashchange', handleNavigation);
+    };
+  }, []);
+
+  const handleOpenProject = (project: typeof projects[0]) => {
+    const section = document.getElementById('projects');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+    setSelectedProject(project);
+  };
 
   return (
     <section id="projects" className="py-20 bg-transparent">
@@ -18,7 +40,7 @@ export default function ProjectGrid() {
           {projects.map((project) => (
             <div 
               key={project.title}
-              onClick={() => setSelectedProject(project)}
+              onClick={() => handleOpenProject(project)}
               className="group relative bg-zinc-900/50 border border-white/10 rounded-xl p-6 hover:border-emerald-500/50 transition-all duration-300 cursor-pointer"
             >
               <h3 className="text-xl font-bold text-white mb-3 group-hover:text-emerald-400">
