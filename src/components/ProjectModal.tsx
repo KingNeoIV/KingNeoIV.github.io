@@ -34,9 +34,22 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
             
             <button 
               onClick={onClose} 
-              className="absolute top-6 right-6 z-50 text-gray-500 hover:text-white transition-colors"
+              className="absolute top-4 right-4 z-50 p-3 text-gray-400 hover:text-white hover:bg-white/10 rounded-full transition-all duration-200"
+              aria-label="Close modal"
             >
-              ✕
+              <svg 
+                className="w-11 h-11" 
+                fill="none" 
+                viewBox="0 0 24 24" 
+                stroke="currentColor"
+              >
+                <path 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  strokeWidth="2.5" 
+                  d="M6 18L18 6M6 6l12 12" 
+                />
+              </svg>
             </button>
 
             {/* 1. MEDIA SECTION */}
