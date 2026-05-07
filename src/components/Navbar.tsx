@@ -17,8 +17,15 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo / Name */}
           <div className="flex-shrink-0">
-            <a href="#" className="text-emerald-500 font-bold text-xl tracking-tighter">
-              KingNeoIV
+            <a href="#" className="flex flex-row itmes-center space-x-2">
+              <img
+                src="/NeoIVLogo.png"
+                alt="NeoIVLogo"
+                className="h-8 w-auto transition-transform hover:scale-110"
+              />
+              <span className="text-emerald-500 font-bold text-xl tracking-tighter">
+                Michael Rios
+              </span>
             </a>
           </div>
 
