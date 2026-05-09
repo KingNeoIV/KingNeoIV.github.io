@@ -1,1 +1,23 @@
 @import "tailwindcss";
+
+/* src/index.css */
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  background-color: #00000000;
+  color: #213547;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: initial; /* Fixes the Vite centering bug */
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+}
