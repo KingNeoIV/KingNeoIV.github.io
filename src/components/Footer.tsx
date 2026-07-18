@@ -1,11 +1,19 @@
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  
+  const lastUpdated = new Date(__BUILD_DATE__).toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+
   return (
     <footer className="py-12 border-t border-white/5 bg-black">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="text-gray-500 text-sm font-mono">
           © {currentYear} Michael Rios. Built with React + Vite.
+          <span className="block md:inline md:ml-3 text-gray-600">
+            Last updated {lastUpdated}
+          </span>
         </div>
         
         <div className="flex gap-8">
