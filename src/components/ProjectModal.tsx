@@ -19,7 +19,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
   return (
     /* 1. OUTER WRAPPER: Added h-screen and overflow-y-auto here for Desktop scrolling */
-    <div className="fixed inset-0 z-[100] w-full h-screen overflow-y-auto bg-black/90 backdrop-blur-md animate-in fade-in duration-300" onClick={onClose}>
+    <div className="fixed inset-0 z-100 w-full h-screen overflow-y-auto bg-black/90 backdrop-blur-md animate-in fade-in duration-300" onClick={onClose}>
       
       {/* 2. ALIGNMENT LAYER: Using flex items-start and py-20 to give it space from the top/nav */}
       <div className="flex items-start justify-center min-h-screen px-4 py-20">
@@ -144,7 +144,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               </div>
 
               {project.challenges && (
-                <div className="bg-white/[0.02] p-8 rounded-2xl border border-white/5">
+                <div className="bg-white/2 p-8 rounded-2xl border border-white/5">
                   <h4 className="text-white font-bold mb-4 flex items-center gap-2">
                     <span className="text-emerald-500 italic">#</span> Engineering Challenges
                   </h4>
@@ -161,14 +161,16 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
             {/* 4. ACTION BUTTONS */}
             <div className="mt-10 pt-8 border-t border-white/5 flex flex-wrap gap-4">
-              <a 
-                href={project.link} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="px-8 py-3 bg-white/5 hover:bg-white/10 text-white font-bold rounded-lg transition-all border border-white/10"
-              >
-                View Repository
-              </a>
+              {!project.hideRepo && (
+                <a 
+                  href={project.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="px-8 py-3 bg-white/5 hover:bg-white/10 text-white font-bold rounded-lg transition-all border border-white/10"
+                >
+                  View Repository
+                </a>
+              )}
               
               {project.download ? (
                 <a 
@@ -178,16 +180,16 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 >
                   Download Installer (.exe)
                 </a>
-              ) : (
+              ) : project.liveUrl ? (
                 <a 
-                  href={project.link} 
+                  href={project.liveUrl} 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="px-8 py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-bold rounded-lg transition-all"
                 >
                   {project.title.includes("Portfolio") ? "Visit Updated Site" : "Visit Site"}
                 </a>
-              )}
+              ) : null}
             </div>
           </div>
         </div>
