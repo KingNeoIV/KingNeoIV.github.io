@@ -14,6 +14,6 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     category: "Backend & Tools",
-    skills: ["Node.js", "Vite", "Git/GitHub", "Inno Setup", "Postman"]
+    skills: ["FastAPI", "PostgreSQL", "Stripe API", "Node.js", "Vite", "Git/GitHub", "Inno Setup", "Postman"]
   }
 ];
