@@ -27,6 +27,7 @@ export const projects: Project[] = [
     liveUrl: "https://pulsecheck.digital",
     hideRepo: true,
     screenshots: [
+      "/linkPicture.png",
       "/pulseCheck0.png",
       "/pulseCheck1.png",
       "/pulseCheck2.png",
